@@ -1,5 +1,6 @@
 import React from "react";
 import ArtistForm from "./ArtistForm";
+import {Songdiv} from "../style-components/style";
 
 class List extends React.Component {
   constructor(props) {
@@ -34,11 +35,11 @@ class List extends React.Component {
   renderArtists = () => {
     return this.state.artists.map((a) => {
       return (
-        <div className="border">
+        <Songdiv className="border">
           <h1>{a.name}</h1>
           <p>{a.song}</p>
           <button onClick={()=>this.deleteArtist(a.name)}>delete</button>
-        </div>
+        </Songdiv>
       );
     });
   };

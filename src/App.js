@@ -1,22 +1,3 @@
-// import './App.css';
-
-
-// function App() {
-//   return (
-//     <div className="border">
-//       <div className="border">
-//         <h1>Functional</h1>
-      
-//         </div>
-//         <div className="border">
-//           <h1>Class</h1>
-//           </div>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import './App.css';
 import ListA from './class/List';
 import ListB from './functional/List';

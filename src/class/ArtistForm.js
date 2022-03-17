@@ -1,4 +1,5 @@
 import React from 'react'
+import { Formdiv } from '../style-components/style'
 
 class ArtistForm extends React.Component{
     constructor(props){
@@ -10,21 +11,11 @@ class ArtistForm extends React.Component{
             }
         }
         handleChange=(e)=>{
-            console.log('song:', e.target.song)
+            console.log('song:', e.target.value)
             console.log('name:', e.target.name)
             this.setState({
-                [e.target.name]:e.target.song
+                [e.target.name]:e.target.value
             })
-
-
-
-
-
-
-
-
-
-
 
     }
     handleSubmit=(e)=>{
@@ -32,10 +23,11 @@ class ArtistForm extends React.Component{
         console.log(this.state)
 
         this.props.addArtist(this.state)
+        
     }
     render(){
         return(
-            <div>
+            <Formdiv>
                 <h1>ArtistForm</h1>
                 <form onSubmit={this.handleSubmit}>
                     <p>name</p>
@@ -44,7 +36,7 @@ class ArtistForm extends React.Component{
                     <input name='song' value={this.state.song} onChange={this.handleChange}/>
                     <button>add</button>
                 </form>
-            </div>
+            </Formdiv>
         )
     }
 }
