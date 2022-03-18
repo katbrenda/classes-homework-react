@@ -1,6 +1,10 @@
 import React from "react";
 import ArtistForm from "./ArtistForm";
 import {Songdiv} from "../style-components/style";
+import { Button } from "react-bootstrap";
+import '../App.css';
+
+
 
 class List extends React.Component {
   constructor(props) {
@@ -9,7 +13,7 @@ class List extends React.Component {
     this.state = {
       artists: [
         { name: "Timaya", song: "Balance" },
-        { name: "Isaac", song: "Close Your Eyes" },
+        { name: "Penguins", song: "Polar Bears" },
       ],
       showForm: true,
     };
@@ -35,11 +39,16 @@ class List extends React.Component {
   renderArtists = () => {
     return this.state.artists.map((a) => {
       return (
-        <Songdiv className="border">
+        
+        <Songdiv key= {a.name} className="border">
+         
           <h1>{a.name}</h1>
           <p>{a.song}</p>
-          <button onClick={()=>this.deleteArtist(a.name)}>delete</button>
+          {/* <button onClick={()=>this.deleteArtist(a.name)}>delete</button> */}
+          <Button onClick={()=>this.deleteArtist(a.name)} as="input" type="Delete" value="Delete" />{' '}
+      
         </Songdiv>
+        
       );
     });
   };
@@ -57,8 +66,9 @@ class List extends React.Component {
 
         {this.renderArtists()}
       </div>
+      
     );
   }
 }
 
-export default List;
+export default List

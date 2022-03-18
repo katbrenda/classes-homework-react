@@ -1,3 +1,13 @@
+.border{
+
+  margin: 5px;
+  padding:5px;
+  border:4px solid green;
+}
+
+.border .border{
+  border: 9px solid magenta
+}
 .App {
   text-align: center;
 }
@@ -37,13 +47,9 @@
   }
 }
 
-.border{
-
-  margin: 5px;
-  padding:5px;
-  border:4px solid green;
+.h1{
+  color: red;
 }
 
-.border .border{
-  border: 9px solid magenta
-}
+
+
